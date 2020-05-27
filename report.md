@@ -99,5 +99,5 @@ Every committing peer validates the transaction against the endorsement policy a
 Applications will be notified by each peer to which they are connected when blocks are added to the blockchain.
  
 ## Conclusion : <br>
-
+ Fabric may be a modular and extensible distributed ledger technology for running permissioned blockchains. It introduces a completely unique architecture that separates transaction execution from consensus and enables policy-based endorsement. Which makes it suitable for a voting app that will be interacted with a mobile app as its frontend.
  
