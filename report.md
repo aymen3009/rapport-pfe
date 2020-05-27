@@ -67,27 +67,33 @@ the consensus in hyperledger fabric network is achieved using the following high
 <br>
 a client application or a user is going to propose a particular transaction by passing its identity in the network and specifying the function invoked in the chaincode with its input and then the client application will send that transaction to multiple endorsing peers (E1 and E2 in this case ) which determined by an endorsement policy.
 - Step 2 : Execute Proposed Transaction <br>
+
 ![step2](img/step2.png)
 <br>
 <br>
 the endorser peers will execute the transaction but they are not going to commit to the blockchain. Each execution will capture the set of read and write data, called RW sets, which will be signed by the endorser peer
 - Step 3 : Proposal Response <br>
+
 ![step3](img/step3.png)<br>
 <br>
 Read-Write sets are asynchronously returned to the client application .
 - Step 4 : Order Transaction <br>
+
 ![step4](img/step4.png) <br>
 <br>
 the client application submits responses as a transaction to the ordering service after collecting sufficient endorsements that satisfies the endorsement policy. the submission of the transaction is happening simultaneously across the network.
 - Step 5 : Deliver Transaction <br>
+
 ![step5](img/step5.png) <br>
 <br>
 the ordering services collect transactions into proposed blocks for distribution to committing peers. Peers can resend the transactions to other peers in a hierarchy
 - Step 6 : Validate Transaction <br>
+
 ![step6](img/step6.png) <br>
 <br>
 Every committing peer validates the transaction against the endorsement policy and checks write and read sets are still valid for the current world state. validated transactions are applied to the world state and stored on the ledger. On the other hand, invalid transactions do not update the world state but they are saved on the ledger.
 - Step 7 : Notify Transaction <br>
+
 ![step7](img/step7.png) <br>
 <br>
 Applications will be notified by each peer to which they are connected when blocks are added to the blockchain.
